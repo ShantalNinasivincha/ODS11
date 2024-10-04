@@ -38,17 +38,20 @@
    padding: 0 10px;
    transition: 0.4s;
  }
- 
- .buscador-fondo {
+.buscador-fondo {
+  position: relative;
   display: flex;
   align-items: center;
   width: 60px;
   height: 40px;
   background: transparent;
+  /* Fondo transparente */
   border-radius: 8px;
   padding: 5px 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   transition: width 0.5s ease-in-out;
+  margin-right: 20px;
+  color: black;
 }
 
 .buscador-fondo:hover {
@@ -58,19 +61,21 @@
 input {
   width: 100%;
   height: 100%;
-  color: #333;
+  color: rgb(255, 255, 255);
   font-size: 16px;
   border: none;
   outline: none;
   background: transparent;
+  padding-left: 30px;
 }
 
-i {
+.buscador-fondo i {
+  position: absolute;
+  left: 10px;
   font-size: 20px;
-  color: #000000;
-  cursor: pointer;
+  color: #333;
 }
-
+ 
  .mostrar-menu,
  .esconder-menu{
    font-size: 40px;
@@ -94,29 +99,22 @@ i {
  #check{
    display: none;
  }
-
-  /*fin del encabezado */
+/*fin del encabezado */
  
-
-
 /*portada */    
- 
+
 #texto {  
-  transform: translateY(50px); 
-  opacity: 0; 
-  transition: transform 2s ease, opacity 1s ease; 
-}    
-
-
-
-#banner1{
+  transform: translateY(50px); /* Comienza desplazado hacia abajo */
+  opacity: 0; /* Inicialmente invisible */  
+  transition: transform 1s ease, opacity 1s ease; /* Transiciones para la posición y opacidad */  
+}  
+ #banner1{
    position: relative;
    background-image: url(../imagenes2/OBS.png);
    background-size: cover;
    background-position: center;
    height: 49vw; 
  }
- 
  .div-portada h3 {
   font-size: 5vw;
   margin-top:4vw;
@@ -137,114 +135,46 @@ i {
   font-weight: 100;
  }
 
-
- /*botones*/
-#d{
-  background-color: white;
-  color: black;
-  font-weight: 600;
-}
- .c{
-  display: flex;
-  align-items: center;
-  padding: 4vw;
-  gap: 30vw;
- }
- .c a{
-  text-decoration: none;
-  padding: 0.5vw;
-  color: rgb(255, 255, 255);
-  border-radius:5px;
-  font-size: 1.2vw;
-  background: rgba(107, 107, 107, 0.254);
- }
- .c a:hover{
-  color: #BB4F06;
-   text-shadow: 0 0 10px;
-   transform:scale(1.1);
-   transition: 0.5s;
-   background: rgba(35, 32, 32, 0.636);
- }
-  /*fin de la portada*/
-
-/*carrusel*/
-  .sli h2{
-    color:white;
-    background: black;
-    text-align: center;
-    font-size: 2.5vw;
-    padding-top:2.5vw;
-  }
-  
-  .carrusel{
-    background: black;
-  }
-  /*fin de carrusel*/
-
-
-/*que son los ods*/
-
-  .texto1{
-    background: #ACBEE1;
-    display: flex;
-    text-align: center; 
-  }
-  .texto1 div{
-    width: 50vw;
-    margin: 2vw;
-  font-size: 1.5vw;
-  }
-  .texto1 h2{
-    font-size: 1.3vw;
-    font-weight: 600;
-  }
-  .texto1 p{
-   height: 15vw;
-  }
-
-  #mun{
-    width: 55vw;
-  }
  
-  #manomundo{
-    padding-top: 2vw;
-  padding-left: 11vw;
-  width: 35vw;
-  }
-/*fin de que son los ods*/
-
-
-/*historia de los ods*/
-.texto2{
-  background:url(../imagenes2/pergamino.jpg);
-  height: 40vw;
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-}
-.texto2 h2{
-  font-size: 1.3vw;
-  font-weight: 600;
-  padding:1.5vw;
+.icons a:hover{
+  transform:scale(1.2);
+  transition: 0.8s;
 }
 
-.texto2 div{
+
+.botones{
   display: flex;
-  text-align: center;   
-  justify-content: center;
-  margin: 2vw;
+  justify-content: space-evenly;
+  color: aliceblue;
 }
-.texto2 p{
-    margin: 2vw;
+.botones a{
+  margin-top: 5vw;
   font-size: 1.5vw;
+  background: rgba(5, 5, 5, 0.593);
+  padding: 0.3vw;
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
 }
 
-.img2{
-  width: 300vw;
+.botones a:hover{
+  color: #BB4F06;
+  text-shadow: 0 0 10px;
+  transition: 0.5s;
 }
 
 
-/*fin de historia de los ods*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -281,33 +211,6 @@ footer h2{
   width: 12vw; 
   gap: 1.5vw;
 }
-
-.icons a:hover{
-  transform:scale(1.2);
-  transition: 0.8s;
-}
-
-/*funcion estatica css*/
-.footer {
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  left: 90vw;
-  padding-bottom: 4vw;
-}
-
-#estatico {
-  padding: 1vw 1vw;
-  background-color: #092038;
-  color: white ;
-  font-size: 1vw;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-
-
-
 
 
 
@@ -371,86 +274,12 @@ footer h2{
       background-position: center;
       height: 53vw; 
     }
-    .div-portada h3 {
-     font-size: 3.5vw;
-     margin-left: 2vw;
-     margin-top: 2vw;
-    }
-    h3 .sos{
-     color: #BB4F06;
-    }
    
-    .div-portada p{
-     width: 60vw;
-     margin-left: 2vw;
-     font-size: 2.5vw;
-     color: aliceblue;
-    }
-
-
-    #d{
-      background-color: white;
-      color: black;
-      font-weight: 600;
-    }
-     .c{
-      display: flex;
-      align-items: center;
-      gap: 20vw;
-      padding: 2vw;
-     }
-     .c a{
-      border-radius:5px;
-      font-size: 2.5vw;
-      background: rgba(107, 107, 107, 0.254);
-     }
-
-     
- .texto1 h2{
-  font-size: 3vw;
- }
-    .texto1 div{
-      width: 50vw;
-      margin: 2vw;
-    font-size: 3vw;
-    }
-    .texto1 p{
-     height: 65vw;
-    }
-
-    .texto2{
-      background:url(../imagenes2/pergamino.jpg);
-      height: 80vw;
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-    }
-
-    .texto2 h2{
-      font-size: 3vw;
-      font-weight: 600;
-      padding:0.5vw;
+    .botones a{
+      margin-top: 2vw;
+      font-size: 1.8vw;
     }
     
-    .texto2 div{
-      display: flex;
-      text-align: center;   
-      justify-content: center;
-      margin: 0;
-    }
-    .texto2 p{
-        margin: 1;
-        font-size: 3vw;
-    }
-    .img2{
-      position: relative;
-      top: 25vw;
-      height: 20vw;
-      width:400vw;
-    }
-
-
-
 
     footer{
       height: 16vw;
